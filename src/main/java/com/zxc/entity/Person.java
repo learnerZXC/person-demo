@@ -1,12 +1,15 @@
 package com.zxc.entity;
 
+import javax.persistence.*;
 
+@Entity
 public class Person {
 	private Integer id; //ID
 	private String name; //姓名
 	private String phone;
 	private String address;
 	
+	@Id
 	public Integer getId() {
 		return id;
 	}
