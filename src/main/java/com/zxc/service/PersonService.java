@@ -1,6 +1,8 @@
 package com.zxc.service;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.zxc.dao.PersonDao;
 import com.zxc.entity.Person;
@@ -8,7 +10,10 @@ import com.zxc.entity.Person;
 @Service
 public class PersonService {
 	
+	@Autowired
 	private PersonDao personDao;
+	
+	
 	public List<Person> getPerson(){
 		return null;
 	}
