@@ -1,6 +1,8 @@
 package com.zxc.service;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.zxc.dao.PersonDao;
 import com.zxc.entity.Person;
@@ -8,29 +10,28 @@ import com.zxc.entity.Person;
 @Service
 public class PersonService {
 	
+	@Autowired
 	private PersonDao personDao;
-	public List<Person> getPerson(){
-		return null;
+	
+	
+	public List<Person> getPersons(){
+		return personDao.getPersons();
 	}
 	
 	public Person getPersonById(Integer id){
-		return null;
+		return personDao.getPersonById(id);
 	}
 	
-	public boolean addPerson(Person person){
-		return true;
+	public void addPerson(Person person){
+		 personDao.addPerson(person);;
 	}
 	
-	public boolean updatePerson(Person person){
-		return true;
+	public void updatePerson(Person person){
+		 personDao.updatePerson(person);;
 	}
 	
-	public boolean deletePerson(Person person){
-		return true;
-	}
-	
-	public boolean deletePersonById(Integer id){
-		return true;
+	public void  deletePersonById(Integer id){
+		 personDao.deletePersonById(id);
 	}
 	
 }
