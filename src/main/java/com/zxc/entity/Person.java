@@ -14,8 +14,7 @@ public class Person {
 	
 	@Id
 	@Column(name="id", nullable=false, unique=true, length=32)
-	@GenericGenerator(name = "generator", strategy = "uuid.hex")
-	@GeneratedValue(generator="generator")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer getId() {
 		return id;
 	}

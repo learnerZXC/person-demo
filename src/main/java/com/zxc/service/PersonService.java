@@ -14,7 +14,6 @@ import com.zxc.entity.Person;
 public class PersonService {
 	
 	@Autowired
-//	@Qualifier(value="personDao")
 	private PersonDao personDao;
 	
 	@Transactional
@@ -27,14 +26,17 @@ public class PersonService {
 		return personDao.getPersonById(id);
 	}
 	
+	@Transactional
 	public void addPerson(Person person){
 		 personDao.addPerson(person);;
 	}
 	
+	@Transactional
 	public void updatePerson(Person person){
 		 personDao.updatePerson(person);;
 	}
 	
+	@Transactional
 	public void  deletePersonById(Integer id){
 		 personDao.deletePersonById(id);
 	}

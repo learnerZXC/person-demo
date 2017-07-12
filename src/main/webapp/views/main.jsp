@@ -44,8 +44,8 @@
 									<td>${p.phone}</td>
 									<td>${p.address}</td>
 									<td align="center">
-										<a class="btn" href="updatePrompt?id=${p.id}">修改</a>
-										<a class="btn" href="delePersonById?id=${p.id}" onclick='return confirm("确定要删除吗")'>删除</a>
+										<a class="btn" href="${pageContext.request.contextPath}/person/updatePrompt?id=${p.id}">修改</a>
+										<a class="btn" href="${pageContext.request.contextPath}/person/deletePersonById?id=${p.id}" onclick='return confirm("确定要删除吗")'>删除</a>
 									</td>
 								</tr>
 							</c:forEach>

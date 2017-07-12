@@ -12,7 +12,7 @@
 		<div class="main">
 		<div class="cont">
 			<table style="margin-left: 30px; margin-top: 30px">
-				<from action="${pageContext.request.contentType}/person/updatePerson" method="post">
+				<form action="${pageContext.request.contextPath}/person/updatePerson" method="post">
 					<input type="hidden" value="${person.id}" name="id">
 					<tr height="30px">
 						<td>姓名：</td><td><input type="text" value="${person.name}" name="name" style="background:gray; height:20px"></td>

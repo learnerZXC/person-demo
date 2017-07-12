@@ -21,10 +21,9 @@ public class PersonDao {
 		return sessionFactory.getCurrentSession();
 	}
 	
-	@SuppressWarnings({ "unchecked", "deprecation" })
+	@SuppressWarnings({ "unchecked" })
 	public List<Person> getPersons(){
-		List<Person> lp =this.getSession().createCriteria(Person.class).list();
-		return lp;
+		return(List<Person>)this.getSession().createCriteria(Person.class).list();
 	}
 	
 	public Person getPersonById(Integer id){
@@ -39,8 +38,8 @@ public class PersonDao {
 		this.getSession().update(person);
 	}
 	
-	public int deletePersonById(Integer id){
-		return this.getSession().createQuery("delete Person where id=?").setParameter(0, id).executeUpdate();
+	public void deletePersonById(Integer id){
+		this.getSession().createQuery("delete Person where id=?").setParameter(0, id).executeUpdate();
 	}
 	
 }
