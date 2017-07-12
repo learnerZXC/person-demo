@@ -7,11 +7,13 @@ import javax.annotation.Resource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zxc.entity.Person;
 
 @Repository
 public class PersonDao {
+	
 	@Resource
 	private SessionFactory sessionFactory;
 	
@@ -21,11 +23,12 @@ public class PersonDao {
 	
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public List<Person> getPersons(){
-		return (List<Person>)this.getSession().createCriteria(Person.class).list();
+		List<Person> lp =this.getSession().createCriteria(Person.class).list();
+		return lp;
 	}
 	
 	public Person getPersonById(Integer id){
-		return (Person)this.getSession().createQuery("from person where id=?").setParameter(0, id).uniqueResult();
+		return (Person)this.getSession().createQuery("from Person where id=?").setParameter(0, id).uniqueResult();
 	}
 	
 	public void addPerson(Person person){
@@ -37,7 +40,7 @@ public class PersonDao {
 	}
 	
 	public int deletePersonById(Integer id){
-		return this.getSession().createQuery("delete person where id=?").setParameter(0, id).executeUpdate();
+		return this.getSession().createQuery("delete Person where id=?").setParameter(0, id).executeUpdate();
 	}
 	
 }
