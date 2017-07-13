@@ -1,59 +1,62 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>登陆</title>
-<link type="text/css" rel="stylesheet" href="../style/reset.css">
-<link type="text/css" rel="stylesheet" href="../style/main.css">
-</head>
+  <head>
+    <title>登陆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
 
-<body>
-<div class="headerBar">
-	<div class="logoBar login_logo">
-		<div class="comWidth">
-			<div class="logo fl">
-				<a href="#"><img src="../images/logo.jpg" alt="慕课网"></a>
-			</div>
-			<h3 class="welcom_title">欢迎登陆</h3>
-		</div>
-	</div>
-</div>
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
 
-<div class="loginBox">
-	<div class="login_cont">
-		<ul class="login">
-			<form action="${pageContext.request.contextPath}/person/doLogin" method="post">
-				<li class="l_tit">邮箱/用户名/手机号</li>
-				<li class="mb_10"><input type="text" name="userName" class="login_input user_icon"></li>
-				<li class="l_tit">密码</li>
-				<li class="mb_10"><input type="password" name="password" class="login_input user_icon"></li>
-				<li class="autoLogin"><input type="checkbox" id="a1" class="checked"><label for="a1">自动登陆</label></li>
-				<li><input type="submit" value="登陆" class="login_btn"></li>
-			</form>
-		</ul>
-		<div class="login_partners">
-			<p class="l_tit">使用合作方账号登陆网站</p>
-			<ul class="login_list clearfix">
-				<li><a href="#">QQ</a></li>
-				<li><span>|</span></li>
-				<li><a href="#">网易</a></li>
-				<li><span>|</span></li>
-				<li><a href="#">新浪微博</a></li>
-				<li><span>|</span></li>
-				<li><a href="#">腾讯微博</a></li>
-			</ul>
-		</div>
-	</div>
-	<a class="reg-link" href="#"></a>
-</div>
-
-<div class="hr_25">
-	<div class="footer">
-		<p><a href="#">慕课简介</a><i>|</i><a href="#">慕课公告</a><i>|</i><a href="#">招贤纳士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：400-1234-5678</a></p>
-		<p>Copyright &copy; 2006 - 2014 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：1234524154</p>
-		<p class="web"><a href="#"><img alt="logo" src="../images/webLogo.jsp"></a></p>
-	</div>
-</div>
-</body>
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-signin" action="${pageContext.request.contextPath}/person/doLogin" method="post">
+        <h3 class="form-signin-heading">登陆</h3>
+        <input type="text" name="userName" class="input-block-level" placeholder="邮箱/用户名/手机号">
+        <input type="password" name="password" class="input-block-level" placeholder="密码">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> 记住密码
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">登陆</button>
+      </form>
+    </div>
+    
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
 </html>

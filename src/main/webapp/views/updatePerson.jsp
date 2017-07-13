@@ -29,7 +29,6 @@
 			</table>
 		</div>
 		</div>
-		<jsp:include page="navigator.jsp"/>
 	</div>
 </body>
 	
